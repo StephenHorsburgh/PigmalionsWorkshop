@@ -4,6 +4,20 @@ const BG_COLOUR = '#231f20';
 const SNAKE_COLOUR = '#c2c2c2';
 const FOOD_COLOUR = 'e669916'; 
 
+const gameState = {
+    player:{
+        pos:{
+            x:3,
+            y:10,
+        },
+        vel: {
+            x:1,
+            y: 0,
+
+        }
+    }
+}
+
 let canvas, ctx;
 
 function init(){
@@ -19,7 +33,11 @@ function init(){
 }
 
 function keydown(e){
+    if(keydown>1){
+        ctx.fillStyle += '#FF00FF';
+    }
     console.log(e.keyCode);
+    console.log(ctx.fillStyle);
 }
 
 init();
