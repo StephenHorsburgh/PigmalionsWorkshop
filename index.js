@@ -4,6 +4,10 @@ const BG_COLOUR = '#231f20';
 const SNAKE_COLOUR = '#c2c2c2';
 const FOOD_COLOUR = '#e69916'; 
 
+const socket = io('http://localhost:3000');
+
+socket.on('init', handleInit);
+
 const gameState = {
     player:{
         pos:{
@@ -79,3 +83,7 @@ function paintPlayer(playerState, size, colour){
 }
 
 paintGame(gameState);
+
+function handleInit(msg){
+    console.log(msg);
+}
