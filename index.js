@@ -68,6 +68,7 @@ function paintGame(state){
 function paintPlayer(playerState, size, colour){
     const snake = playerState.snake;
 
+    ctx.fillStyle = colour;
     for(let cell of snake){
         ctx.fillRect(cell.x * size, cell.y * size, size, size);
     }
